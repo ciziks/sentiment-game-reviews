@@ -6,6 +6,7 @@ from PIL import Image
 def main():
     st.title("Game of The Year 2023")
     st.header("Review The Game of The Year 2023! 🕹️")
+    st.subheader("By Gustavo de Oliveira & Lucas Ciziks")
 
     placeholder = st.empty()
     placeholder.text("Loading...")
