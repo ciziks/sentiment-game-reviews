@@ -1,0 +1,24 @@
+[tool.poetry]
+name = "hate-speech-identification"
+version = "0.1.0"
+description = ""
+authors = ["Lucas Ciziks"]
+readme = "README.md"
+packages = []
+
+[tool.poetry.dependencies]
+python = ">=3.11,<3.12"
+pandas = "^2.1.3"
+tensorflow = "^2.15.0"
+transformers = "^4.35.2"
+ipykernel = "^6.26.0"
+scikit-learn = "^1.3.2"
+huggingface-hub = "^0.19.4"
+dataset = "^1.6.2"
+dash = "^2.14.1"
+streamlit = "^1.28.2"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
