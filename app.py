@@ -28,6 +28,7 @@ def analyze_game(name: str, image_path: str, analyzer: SentimentAnalyzer):
 def main():
     st.title("Game of The Year 2023")
     st.header("Review The Game of The Year 2023! 🕹️")
+    st.subheader("By Lucas Ciziks & Gustavo de Oliveira")
 
     placeholder = st.empty()
     placeholder.text("Loading...")

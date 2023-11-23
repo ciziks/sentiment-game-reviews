@@ -1,4 +1,4 @@
-# Sentiment Analysis on Game Reviews
+# Sentiment Analysis and Hate Speech Detection on Game Reviews
 
 Parâmetros já treinados disponíveis em: https://huggingface.co/Guspfc
 
