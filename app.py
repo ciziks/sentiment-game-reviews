@@ -3,10 +3,25 @@ from sentiment import SentimentAnalyzer
 from PIL import Image
 
 
+def analyze_game(name: str, image_path: str, analyzer: SentimentAnalyzer):
+    st.header(name)
+    st.image(
+        [
+            Image.open(image_path),
+        ],
+        width=500,
+    )
+
+    review: str = st.text_input(f"Describe your experience playing **{name}**")
+
+    if review:
+        sentiment: str = analyzer.analyze(review)
+        st.write(f"Overall Feeling: {sentiment}")
+
+
 def main():
     st.title("Game of The Year 2023")
     st.header("Review The Game of The Year 2023! 🕹️")
-    st.subheader("By Gustavo de Oliveira & Lucas Ciziks")
 
     placeholder = st.empty()
     placeholder.text("Loading...")
@@ -14,55 +29,34 @@ def main():
     placeholder.empty()
 
     # Alan Wake
-    st.header("Alan Wake 2")
-    st.image(
-        [
-            Image.open("images/alan_wake.png"),
-        ],
-        width=500,
-    )
+    alan_wake: str = "Alan Wake 2"
+    alan_wake_img: str = "images/alan_wake.png"
 
-    alan_wake_review: str = st.text_input(
-        "Describe your experience playing **Alan Wake 2**"
-    )
-
-    if alan_wake_review:
-        alan_wake_sentiment: str = sentiment_analyzer.analyze(alan_wake_review)
-        st.write(f"Overall Feeling: {alan_wake_sentiment}")
+    analyze_game(alan_wake, alan_wake_img, sentiment_analyzer)
 
     # Baldurs Gate 3
-    st.header("Baldur's Gate 3")
-    st.image(
-        [
-            Image.open("images/baldur_gate.png"),
-        ],
-        width=400,
-    )
+    baldur_gate: str = "Baldur's Gate 3"
+    baldur_gate_img: str = "images/baldur_gate.png"
 
-    baldur_review: str = st.text_input(
-        "Describe your experience playing **Baldur's Gate 3**"
-    )
+    analyze_game(baldur_gate, baldur_gate_img, sentiment_analyzer)
 
-    if baldur_review:
-        baldur_sentiment: str = sentiment_analyzer.analyze(baldur_review)
-        st.write(f"Overall Feeling: {baldur_sentiment}")
+    # The Legend Of Zelda
+    zelda: str = "The Legend of Zelda: Tears of the Kingdom"
+    zelda_img: str = "images/zelda.png"
 
-    # Zelda
-    st.header("The Legend of Zelda: Tears of the Kingdom")
-    st.image(
-        [
-            Image.open("images/zelda.png"),
-        ],
-        width=400,
-    )
+    analyze_game(zelda, zelda_img, sentiment_analyzer)
 
-    zelda_review: str = st.text_input(
-        "Describe your experience playing **The Legend of Zelda: Tears of the Kingdom**"
-    )
+    # Spider Man 2
+    spider_man: str = "Marvel's Spider-Man 2"
+    spider_man_img: str = "images/spider.jpeg"
 
-    if zelda_review:
-        zelda_sentiment: str = sentiment_analyzer.analyze(zelda_review)
-        st.write(f"Overall Feeling: {zelda_sentiment}")
+    analyze_game(spider_man, spider_man_img, sentiment_analyzer)
+
+    # Super Mario Bros. Wonder
+    mario: str = "Super Mario Bros. Wonder"
+    mario_img: str = "images/mario.jpeg"
+
+    analyze_game(mario, mario_img, sentiment_analyzer)
 
 
 if __name__ == "__main__":

@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "hate-speech-identification"
+name = "sentiment-game-reviews"
 version = "0.1.0"
 description = ""
 authors = ["Lucas Ciziks"]
