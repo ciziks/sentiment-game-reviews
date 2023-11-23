@@ -33,7 +33,7 @@ class SentimentAnalyzer:
     def analyze_sentiment(self, text: str):
         input_token = self.tokenizer_sentiment(text, return_tensors="tf")
 
-        outputs = self.model(**input_token)
+        outputs = self.model_sentiment(**input_token)
         logits = outputs.logits
 
         probabilities = tf.nn.softmax(logits, axis=-1)
@@ -51,7 +51,7 @@ class SentimentAnalyzer:
     def analyze_hate_speech(self, text: str):
         input_token = self.tokenizer_hate(text, return_tensors="tf")
 
-        outputs = self.model(**input_token)
+        outputs = self.model_hate(**input_token)
         logits = outputs.logits
 
         probabilities = tf.nn.softmax(logits, axis=-1)

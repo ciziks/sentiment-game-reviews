@@ -15,8 +15,14 @@ def analyze_game(name: str, image_path: str, analyzer: SentimentAnalyzer):
     review: str = st.text_input(f"Describe your experience playing **{name}**")
 
     if review:
-        sentiment: str = analyzer.analyze(review)
+        # Analyze Sentiment of Review
+        sentiment: str = analyzer.analyze_sentiment(review)
         st.write(f"Overall Feeling: {sentiment}")
+
+        # Analyze if Review has Hate Speech
+        hate_speech = analyzer.analyze_hate_speech(review)
+        if hate_speech:
+            st.write(hate_speech)
 
 
 def main():
